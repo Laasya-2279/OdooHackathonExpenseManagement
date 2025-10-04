@@ -8,11 +8,10 @@ const {
   changeUserRole,
   assignManager,
   deleteUser
-} = require('../controllers/user.controller');
+} = require('../controller/user.controller');
 const { protect } = require('../middleware/auth.middleware');
 const { isAdmin } = require('../middleware/role.middleware');
 
-// All routes require authentication and admin role
 router.use(protect);
 router.use(isAdmin);
 

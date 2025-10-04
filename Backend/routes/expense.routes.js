@@ -6,10 +6,9 @@ const {
   getExpenseById,
   updateExpense,
   deleteExpense
-} = require('../controllers/expense.controller');
+} = require('../controller/expense.controller');
 const { protect } = require('../middleware/auth.middleware');
 
-// All routes require authentication
 router.use(protect);
 
 router.route('/')

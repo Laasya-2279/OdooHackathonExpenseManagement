@@ -30,7 +30,6 @@ const createUser = async (req, res) => {
             });
         }
 
-        // If managerId provided, verify manager exists
         if (managerId) {
             const manager = await User.findByPk(managerId);
             if (!manager || manager.companyId !== req.user.companyId) {
@@ -41,7 +40,6 @@ const createUser = async (req, res) => {
             }
         }
 
-        // Create user
         const user = await User.create({
             firstName,
             lastName,
@@ -173,7 +171,6 @@ const updateUser = async (req, res) => {
             }
         }
 
-        // Update user
         await user.update({
             firstName: firstName || user.firstName,
             lastName: lastName || user.lastName,

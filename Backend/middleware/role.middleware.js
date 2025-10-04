@@ -1,4 +1,4 @@
-// Restrict access to specific roles
+
 const authorize = (...roles) => {
   return (req, res, next) => {
     if (!req.user) {
@@ -19,7 +19,7 @@ const authorize = (...roles) => {
   };
 };
 
-// Check if user is admin
+
 const isAdmin = (req, res, next) => {
   if (!req.user || req.user.role !== 'admin') {
     return res.status(403).json({
@@ -30,7 +30,7 @@ const isAdmin = (req, res, next) => {
   next();
 };
 
-// Check if user is manager or admin
+
 const isManagerOrAdmin = (req, res, next) => {
   if (!req.user || (req.user.role !== 'admin' && req.user.role !== 'manager')) {
     return res.status(403).json({

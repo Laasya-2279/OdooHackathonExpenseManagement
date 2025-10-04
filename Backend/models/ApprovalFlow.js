@@ -4,7 +4,6 @@ const Company = require('./Company');
 const User = require('./User');
 const Expense = require('./Expense');
 
-// Approval Flow Template
 const ApprovalFlow = sequelize.define('ApprovalFlow', {
   id: {
     type: DataTypes.INTEGER,
@@ -48,7 +47,6 @@ const ApprovalFlow = sequelize.define('ApprovalFlow', {
   timestamps: true
 });
 
-// Approval History
 const ApprovalHistory = sequelize.define('ApprovalHistory', {
   id: {
     type: DataTypes.INTEGER,
